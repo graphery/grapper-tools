@@ -1,0 +1,11 @@
+{
+  "name": "grapper-tools",
+  "version": "0.0.3",
+  "description": "Grapper Tools",
+  "author": "Graphery",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/graphery/grapper-tools.git"
+  },
+  "license": "MIT"
+}

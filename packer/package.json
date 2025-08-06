@@ -1,0 +1,20 @@
+{
+  "name": "grapper-packer",
+  "version": "0.0.3",
+  "description": "Grapper Packer",
+  "author": "Graphery",
+  "main": "./index.js",
+  "bin": {
+    "g-packer": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/graphery/grapper-tools.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.0",
+    "esbuild": "^0.25.8",
+    "esprima-next": "^6.0.3"
+  }
+}
