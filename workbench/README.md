@@ -1,4 +1,4 @@
-# ![grapper-workbench](src/static/grapper.svg)
+# ![Grapper](./assets/img/grapper.png) workbench
 
 ## Introduction
 
