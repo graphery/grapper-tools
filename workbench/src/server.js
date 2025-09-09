@@ -4,7 +4,7 @@ import path         from 'node:path';
 import fs           from 'node:fs';
 import Update       from './update.js';
 import log          from './log.js';
-import ext2mimeType from './ext2mime.json' with {type: "json"};
+import ext2mimeType from './ext2mime.json' with { type : "json" };
 
 
 export default async ({root, port, label, tests, lib, imp}) => {
@@ -59,16 +59,15 @@ async function test (request, response, label, folder, root) {
 }
 
 async function getName (fileLoc) {
+  const fileName = path.basename(fileLoc, path.extname(fileLoc));
   try {
-    const imp = await import(`file://${ fileLoc }?${ Math.random() }`);
-    if (imp.title) {
-      return imp.title;
-    }
+    const exp     = /export\s+(?:const|let|var)\s+title\s*=\s*(["'`])((?:\\.|(?!\1)[\s\S])*)\1\s*;?/
     const content = (await fs.promises.readFile(fileLoc)).toString();
-    return content.substring(0, content.indexOf('\n')).trim().substring(2).trim();
+    const result  = content.match(exp);
+    return result ? result[2] : fileName;
   } catch (err) {
     console.error(err);
-    return 'Error!'
+    return fileName;
   }
 }
 
